@@ -51,7 +51,11 @@ class comunacontroller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $comuna = Comuna::find($id);
+        $comuna ->comu_nomb = $request->comu_nomb;
+        $comuna ->muni_codi = $request->muni_codi;
+        $comuna ->save();
+        return json_decode(['comuna'=>$comuna]);
     }
 
     /**
