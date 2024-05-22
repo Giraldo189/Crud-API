@@ -26,7 +26,11 @@ class comunacontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comuna = new Comuna();
+        $comuna ->comu_nomb = $request->comu_nob;
+        $comuna ->muni_codi = $request->muni_codi;
+        $comuna ->save();
+        return json_decode(['comuna'=> $comuna]);
     }
 
     /**
@@ -34,7 +38,7 @@ class comunacontroller extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
